@@ -24,7 +24,7 @@ namespace DepartamentosCoreCRUD
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            String cadenaconexion = "Data Source=LOCALHOST\\SQLEXPRESS;Initial Catalog=HOSPITAL;Persist Security Info=True;User ID=sa;Password=azure";
+            String cadenaconexion = this.Configuration.GetConnectionString("cadenahospitallocal");
             DepartamentosContext depcontext = new DepartamentosContext(cadenaconexion);
             services.AddTransient<DepartamentosContext>(context => depcontext);
             services.AddControllersWithViews();
