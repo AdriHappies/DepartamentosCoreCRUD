@@ -83,7 +83,7 @@ namespace DepartamentosCoreCRUD.Data
 
         public int UpdateDepartamento(int iddepartamento, String nombre, String localidad)
         {
-            String sql = "update dept set dnombre=@nombre, loc=@localidad " +
+            String sql = "update dept set dnombre=@nombre, loc=@loc " +
                 "where dept_no=@id";
             this.com.CommandText = sql;
             SqlParameter pamid = new SqlParameter("@id", iddepartamento);
